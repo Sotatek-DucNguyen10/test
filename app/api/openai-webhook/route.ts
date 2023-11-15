@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   console.log("🚀 ~ POST ~ data:", data);
 
   try {
-    return NextResponse.json(data, { status: 200 });
+    return NextResponse.json({ ...data, message: "ok" }, { status: 200 });
   } catch (e) {
     return NextResponse.json(e);
   }
